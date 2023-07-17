@@ -1,0 +1,19 @@
+version: '3'
+
+# More info at 
+services:
+  aria2-ariang:
+    container_name: aria2-ariang
+    image: ganeshkakade/aria2-ariang:latest
+    ports:
+      - 6800:6800
+      - 8080:8080
+    environment:
+      - TZ=Asia/Kolkata
+      - RPC_SECRET=
+      - BASIC_AUTH_USERNAME=
+      - BASIC_AUTH_PASSWORD=
+    volumes:
+      - ./aria2/config:/aria2/config
+      - ./aria2/downloads:/aria2/downloads
+    restart: unless-stopped
