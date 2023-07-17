@@ -9,6 +9,8 @@ services:
       - 6800:6800
       - 8080:8080
     environment:
+      - PUID=1000
+      - PGID=1000
       - TZ=Asia/Kolkata
       - RPC_SECRET=
       - BASIC_AUTH_USERNAME=
