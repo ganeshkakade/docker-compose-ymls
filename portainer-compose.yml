@@ -1,0 +1,14 @@
+version: '3'
+
+# More info at https://docs.portainer.io/start/install-ce/server/docker/linux
+services:
+  portainer-ce:
+    container_name: portainer-ce
+    image: portainer/portainer-ce:latest
+    ports:
+      - 8000:8000
+      - 9443:9443
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./data:/data
+    restart: unless-stopped
