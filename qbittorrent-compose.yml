@@ -1,0 +1,18 @@
+version: '3'
+
+# More info at https://docs.linuxserver.io/images/docker-qbittorrent
+services:
+  qbittorrent:
+    container_name: qbittorrent
+    image: lscr.io/linuxserver/qbittorrent:latest
+    ports:
+      - 8080:8080
+      - 6881:6881
+      - 6881:6881/udp
+    environment:
+      - TZ=Asia/Kolkata
+      - WEBUI_PORT=8080
+    volumes:
+      - ./config:/config
+      - ./downloads:/downloads
+    restart: unless-stopped

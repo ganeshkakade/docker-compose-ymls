@@ -1,0 +1,25 @@
+version: '3'
+
+# More info at https://github.com/linuxserver/docker-plex
+services:
+  plex:
+    container_name: plex
+    image: lscr.io/linuxserver/plex:latest
+    ports:
+      - '32400:32400'
+      - '1900:1900/udp'
+      - '3005:3005'
+      - '53530:5353/udp'
+      - '8324:8324'
+      - '32410:32410/udp'
+      - '32412:32412/udp'
+      - '32413:32413/udp'
+      - '32414:32414/udp'
+      - '32469:32469'
+    environment:
+      TZ: 'Asia/Calcutta'
+      PLEX_CLAIM: '' #optional
+    volumes:
+      - ./config:/config
+      - ./shared:/shared
+    restart: unless-stopped

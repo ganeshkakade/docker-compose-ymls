@@ -1,0 +1,15 @@
+version: '3'
+
+# More info at https://github.com/nextcloud/nextcloudpi
+services:
+  nextcloudpi:
+    container_name: nextcloudpi
+    image: ownyourbits/nextcloudpi
+    ports:
+      - '4443:4443'
+      - '443:443'
+      - '8080:80'
+    volumes:
+      - './data:/data:rw'
+    restart: unless-stopped
+    hostname: nextcloud.pi
