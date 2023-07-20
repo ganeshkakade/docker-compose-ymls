@@ -13,13 +13,13 @@ services:
     environment:
       - TZ=Asia/Kolkata
       - DNSMASQ_LISTENING=all
-      - PIHOLE_DNS_=1.1.1.1;1.0.0.1
+      - PIHOLE_DNS_=1.1.1.2;1.0.0.2
     volumes:
       - ./etc/pihole:/etc/pihole
       - ./etc/dnsmasq.d:/etc/dnsmasq.d
     dns:
       - 127.0.0.1
-      - 1.1.1.1
+      - 1.1.1.2
     hostname: pi.hole
     cap_add:
       - NET_ADMIN

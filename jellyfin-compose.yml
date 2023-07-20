@@ -6,11 +6,13 @@ services:
     container_name: jellyfin
     image: jellyfin/jellyfin
     ports:
-      - 8096:8096
+      - 8096:8096/tcp
     environment:
       - TZ=Asia/Kolkata
+    user: 1000:1000
     volumes:
       - ./config:/config
       - ./cache:/cache
       - ./media:/media
     restart: unless-stopped
+

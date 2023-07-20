@@ -1,6 +1,6 @@
 version: '3'
 
-# More info at 
+# More info at https://hub.docker.com/r/ganeshkakade/aria2-ariang
 services:
   aria2-ariang:
     container_name: aria2-ariang
