@@ -1,0 +1,16 @@
+version: '3'
+
+# More info at https://github.com/Lissy93/dashy
+services:
+  dashy:
+    container_name: dashy
+    image: lissy93/dashy
+    ports:
+      - 8888:80
+    environment:
+      - UID=1000
+      - GID=1000
+      - TZ=Asia/Kolkata
+    volumes:
+      - ./app/public/conf.yml:/app/public/conf.yml
+    restart: unless-stopped
