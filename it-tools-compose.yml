@@ -1,0 +1,12 @@
+version: '3'
+
+# More info at https://github.com/CorentinTh/it-tools
+services:
+  it-tools:
+    container_name: it-tools
+    image: corentinth/it-tools:latest
+    ports:
+      - 8800:80
+    environment:
+      - TZ=Asia/Kolkata
+    restart: unless-stopped

@@ -1,0 +1,14 @@
+version: '3'
+
+# More info at https://py-kms.readthedocs.io/en/latest/index.html
+services:
+  py-kms:
+    container_name: py-kms
+    image: ghcr.io/py-kms-organization/py-kms
+    ports:
+      - 1688:1688
+    environment:
+      - TZ=Asia/Kolkata
+    volumes:
+      - ./etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
