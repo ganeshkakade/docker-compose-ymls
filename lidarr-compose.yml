@@ -13,10 +13,10 @@ services:
       - TZ=Asia/Kolkata
     volumes:
       - ./config:/config
-      - shared_music:/music #optional
-      - shared_downloads:/downloads #optional
+      - shared-music:/music #optional
+      - shared-downloads:/downloads #optional
     restart: unless-stopped
 
 volumes:
-  shared_music:
-  shared_downloads:
+  shared-music:
+  shared-downloads:

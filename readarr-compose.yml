@@ -13,10 +13,10 @@ services:
       - TZ=Asia/Kolkata
     volumes:
       - ./config:/config
-      - shared_books:/books #optional
-      - shared_downloads:/downloads #optional
+      - shared-books:/books #optional
+      - shared-downloads:/downloads #optional
     restart: unless-stopped
 
 volumes:
-  shared_books:
-  shared_downloads:
+  shared-books:
+  shared-downloads:
