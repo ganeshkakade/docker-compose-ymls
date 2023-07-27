@@ -1,0 +1,22 @@
+version: '3'
+
+# More info at https://hub.docker.com/r/linuxserver/sabnzbd
+services:
+  sabnzbd:
+    container_name: sabnzbd
+    image: lscr.io/linuxserver/sabnzbd:latest
+    ports:
+      - 8088:8080
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+    volumes:
+      - ./config:/config
+      - shared-downloads:/downloads #optional
+      - shared-incomplete-downloads:/incomplete-downloads #optional
+    restart: unless-stopped
+
+volumes:
+  shared-downloads:
+  shared-incomplete-downloads:
