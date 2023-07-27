@@ -1,0 +1,22 @@
+version: '3'
+
+# More info at https://hub.docker.com/r/linuxserver/lidarr
+services:
+  lidarr:
+    container_name: lidarr
+    image: lscr.io/linuxserver/lidarr:latest
+    ports:
+      - 8686:8686
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+    volumes:
+      - ./config:/config
+      - shared_music:/music #optional
+      - shared_downloads:/downloads #optional
+    restart: unless-stopped
+
+volumes:
+  shared_music:
+  shared_downloads:

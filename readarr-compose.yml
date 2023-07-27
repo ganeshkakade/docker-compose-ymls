@@ -1,0 +1,22 @@
+version: '3'
+
+# More info at https://hub.docker.com/r/linuxserver/readarr
+services:
+  readarr:
+    container_name: readarr
+    image: lscr.io/linuxserver/readarr:develop
+    ports:
+      - 8787:8787
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+    volumes:
+      - ./config:/config
+      - shared_books:/books #optional
+      - shared_downloads:/downloads #optional
+    restart: unless-stopped
+
+volumes:
+  shared_books:
+  shared_downloads:

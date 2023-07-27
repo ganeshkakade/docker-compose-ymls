@@ -1,0 +1,22 @@
+version: '3'
+
+# More info at https://hub.docker.com/r/linuxserver/bazarr
+services:
+  bazarr:
+    container_name: bazarr
+    image: lscr.io/linuxserver/bazarr:latest
+    ports:
+      - 6767:6767
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+    volumes:
+      - ./config:/config
+      - shared_movies:/movies #optional
+      - shared_tv:/tv #optional
+    restart: unless-stopped
+
+volumes:
+  shared_movies:
+  shared_tv:
