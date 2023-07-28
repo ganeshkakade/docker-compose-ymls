@@ -13,10 +13,12 @@ services:
       - TZ=Asia/Kolkata
     volumes:
       - ./config:/config
-      - shared-movies:/movies #optional
-      - shared-tv:/tv #optional
+      - share_movies:/movies #optional
+      - share_tv:/tv #optional
     restart: unless-stopped
 
 volumes:
-  shared-movies:
-  shared-tv:
+  share_movies:
+    external: true
+  share_tv:
+    external: true

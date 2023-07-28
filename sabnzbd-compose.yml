@@ -13,10 +13,11 @@ services:
       - TZ=Asia/Kolkata
     volumes:
       - ./config:/config
-      - shared-downloads:/downloads #optional
-      - shared-incomplete-downloads:/incomplete-downloads #optional
+      - share_downloads:/downloads #optional
+      - share_incomplete-downloads:/incomplete-downloads #optional
     restart: unless-stopped
 
 volumes:
-  shared-downloads:
-  shared-incomplete-downloads:
+  share_downloads:
+    external: true
+  share_incomplete-downloads:

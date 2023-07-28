@@ -15,8 +15,9 @@ services:
       - TZ=Asia/Kolkata
     volumes:
       - ./config:/config
-      - shared-downloads:/downloads
+      - share_downloads:/downloads
     restart: unless-stopped
 
 volumes:
-  shared-downloads:
+  share_downloads:
+    external: true

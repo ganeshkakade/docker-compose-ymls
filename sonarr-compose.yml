@@ -13,10 +13,12 @@ services:
       - TZ=Asia/Kolkata
     volumes:
       - ./config:/config
-      - shared-tv:/tv #optional
-      - shared-downloads:/downloads #optional
+      - share_tv:/tv #optional
+      - share_downloads:/downloads #optional
     restart: unless-stopped
 
 volumes:
-  shared-tv:
-  shared-downloads:
+  share_tv:
+    external: true
+  share_downloads:
+    external: true
