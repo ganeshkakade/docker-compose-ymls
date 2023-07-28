@@ -14,16 +14,4 @@ services:
       - ./config:/config
       - ./cache:/cache
       - ./media:/media
-      - shared-movies:/movies
-      - shared-tv:/tv
-      - shared-music:/music
-      - shared-books:/books
-      - shared-downloads:/downloads
     restart: unless-stopped
-
-volumes:
-  shared-movies:
-  shared-tv:
-  shared-music:
-  shared-books:
-  shared-downloads:
