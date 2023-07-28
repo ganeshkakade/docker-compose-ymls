@@ -14,4 +14,21 @@ services:
       - ./config:/config
       - ./cache:/cache
       - ./media:/media
+      - share_movies:/movies
+      - share_tv:/tv
+      - share_music:/music
+      - share_books:/books
+      - share_downloads:/downloads
     restart: unless-stopped
+
+volumes:
+  share_movies:
+    external: true
+  share_tv:
+    external: true
+  share_music:
+    external: true
+  share_books:
+    external: true
+  share_downloads:
+    external: true
